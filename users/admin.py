@@ -9,17 +9,17 @@ class iLKMSUserAdmin(UserAdmin):
     add_form = iLKMSUserCreationForm
     form = iLKMSUserChangeForm
     model = iLKMSUser
-    list_display = ("id","full_name","email","phone_number", "is_superuser", "is_staff", "is_active", "date_joined",)
-    list_filter = ("email", "is_staff", "is_active",)
+    list_display = ("id","full_name","email","phone_number", "date_of_birth", "national_id", "address", "is_superuser", "is_staff", "is_active", "date_joined",)
+    list_filter = ("email", "is_staff", "is_active", "groups",)
     fieldsets = (
-        (None, {"fields": ("full_name","email","phone_number")}),
+        (None, {"fields": ("full_name","email","phone_number", "date_of_birth", "national_id", "address", "password")}),
         ("Permissions", {"fields": ("is_superuser", "is_staff", "is_active", "groups", "user_permissions")}),
     )
     add_fieldsets = (
         (None, {
             "classes": ("wide",),
             "fields": (
-                "full_name","email","phone_number", "password1", "password2", "is_staff",
+                "full_name","email","phone_number", "date_of_birth", "national_id", "address", "password1", "password2", "is_staff",
                 "is_active", "groups", "user_permissions"
             )}
         ),

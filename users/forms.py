@@ -8,18 +8,18 @@ class iLKMSUserCreationForm(UserCreationForm):
 
     class Meta:
         model = iLKMSUser
-        fields = ("full_name","email","phone_number", "is_superuser", "is_staff", "is_active", "date_joined",)
+        fields = ("full_name","email","phone_number","date_of_birth", "national_id", "is_superuser", "is_staff", "is_active", "date_joined",)
 
 
 class iLKMSUserChangeForm(UserChangeForm):
 
     class Meta:
         model = iLKMSUser
-        fields = ("full_name","email","phone_number", "is_superuser", "is_staff", "is_active", "date_joined",)
+        fields = ("full_name","email","phone_number", "date_of_birth", "national_id", "is_superuser", "is_staff", "is_active", "date_joined",)
 
 
 
 from phonenumber_field.formfields  import PhoneNumberField
 
 class PhoneForm(forms.Form):
-    phone_number = PhoneNumberField(region="CA")
+    phone_number = PhoneNumberField(region="BD")

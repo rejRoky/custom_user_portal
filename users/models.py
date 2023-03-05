@@ -14,6 +14,9 @@ class iLKMSUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(_("email Address"), unique=True)
     full_name = models.CharField("Full Name", max_length=100,  null=True, blank=True)
     phone_number = PhoneNumberField("Phone Number", null=True, blank=True, unique=True)
+    date_of_birth = models. DateField ("Birth of Date",null=True, blank=True)
+    national_id = models.CharField("National ID Number", max_length=17,  null=True, blank=True)
+    address = models.CharField("Address", max_length=500,  null=True, blank=True)
 
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
